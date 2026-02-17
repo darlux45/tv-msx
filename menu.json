@@ -13,6 +13,11 @@
       "action": "link:https://darlux45.github.io/tv-msx/index.html"
     },
     {
+  "label": "Nuevo Canal",
+  "icon": "tv",
+  "action": "link:https://darlux45.github.io/tv-msx/index.html?get=Q2luZW1heA=="
+},
+    {
       "label": "Ajustes MSX",
       "icon": "settings",
       "action": "settings"
