@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSX Player</title>
+    <script src="https://ssl.p.jwpcdn.com/7/jwplayer.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; overflow: hidden; }
+        #player { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+
+    <script>
+        // Configuración con tu URL de TVLibre
+        var playerInstance = jwplayer("player").setup({
+            file: "https://tvlibree.com/html/fl/?get=QUVIRA==",
+            width: "100%",
+            height: "100%",
+            autostart: true,
+            stretching: "uniform"
+        });
+
+        // ESCUCHADOR DEL CONTROL REMOTO (MSX)
+        window.addEventListener("keydown", function(e) {
+            console.log("Tecla presionada: " + e.keyCode); // Para debug
+            
+            switch(e.keyCode) {
+                case 13: // Botón OK / ENTER
+                    var state = playerInstance.getState();
+                    state === "playing" ? playerInstance.pause() : playerInstance.play();
+                    break;
+                case 37: // Flecha Izquierda
+                    playerInstance.seek(playerInstance.getPosition() - 10);
+                    break;
+                case 39: // Flecha Derecha
+                    playerInstance.seek(playerInstance.getPosition() + 10);
+                    break;
+                case 27: // Botón Atrás (Back)
+                case 461:
+                    window.location.href = "msx:back";
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
