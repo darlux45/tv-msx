@@ -1,0 +1,21 @@
+{
+  "name": "MI TV PERSONAL",
+  "template": {
+    "type": "separate",
+    "layout": "0,0,4,3",
+    "color": "msx-glass",
+    "background": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80"
+  },
+  "menu": [
+    {
+      "label": "Canal TV Libre",
+      "icon": "play_arrow",
+      "action": "link:https://darlux45.github.io/tv-msx/index.html"
+    },
+    {
+      "label": "Ajustes MSX",
+      "icon": "settings",
+      "action": "settings"
+    }
+  ]
+}
